@@ -1,0 +1,84 @@
+#+TITLE: Installation instructions for pyladies meetup on data visualization
+#+OPTIONS: toc:nil
+#+AUTHOR:
+#+DATE:
+
+Hi everyone, I'm Ashley, a postdoctoral researcher at the University of Texas. I use python for calculations, simulations, data analysis, and to create pretty plots to put in my published work. I will be sharing my knowledge about data visualization in the pyladies meetup this month. If you have trouble with installing the packages below, then please contact me. I will help as best I can. If all else fails you are welcome to show up anyway: you will get an idea of the possibilities, and you can always look on with your neighbor.
+
+Below I will assume you already have a working python, preferably version 2.7, but 2.6 should work as well. To help both yourself and others, try to let me know as soon as possible if there are any issues so we can try to find a work-around! To summarize:
+
+*Required packages:*
++ numpy
+
++ matplotlib
+
+*Optional packages:*
++ scipy
++ ipython
+
+Below are three options for installation, with Option 1 being the easiest.
+
+* Packaged python distribution
+There are several companies offering free packaged python distributions that include numerical, scientific, and data analysis tools. Both of these include numpy, matplotlib, scipy, and ipython. If you want to go this route, below are two of your options:
+** Enthought Canopy
+   1. Download from here: https://www.enthought.com/downloads/
+   2. Install
+      + Windows/mac: double-click the installer
+      + Linux: 
+        : bash canopy-1.4.0-rh5-64.sh
+        (replace x.x.x with the version you downloaded, and replace the -64 with -32 if you have the 32-bit version)
+   3. Open Canopy from your applications menu and choose Editor. From here, there is an ipython window at the bottom, and a file editor on top.
+   4. Test it out by typing some commands in the Canopy ipython window
+.
+** Anaconda from Continuum Analytics
+   1. Download from here: http://continuum.io/downloads
+   2. Install (also see http://docs.continuum.io/anaconda/install.html)
+     + Windows/mac: double-click the installer
+     + Linux: 
+       : bash Anaconda-x.x.x-Linux-x86_64.sh
+       (replace the x.x.x with the version you downloaded, and omit the _64 if you have 32 bit version)
+   3. Anaconda comes with an integrated development environment called Spyder. If you don't have a favorite text editor, consider using this.
+   4. You may need to use the python launcher in the Anaconda folder (depends on which options you chose during installation)
+   5. Try it out by either using Spyder or the python launcher and typing some commands in the python window. 
+
+* pip
+The potential issue with this option is the extra (non-python) packages which are required to install the numerical and plotting python modules. If this works for you out-of-the-box, then great! Otherwise, you might think about using a pre-packaged distribution (Option 1). Steps:
+0. This method requires pip
+1. Install numpy
+   : pip install numpy
+2. Install matplotlib
+   : pip install matplotlib
+3. (Optional, but recommended) Install ipython and/or scipy
+   : pip install ipython
+   : pip install scipy
+4. If you got an error message, then you probably need to download an extra dependence. Check the error message to see which one you need.
+5. If you did not get any error messages:
+   + If you chose not to install ipython
+     : python
+     : >>> import numpy
+     : >>> import matplotlib
+     : >>> import scipy
+     Note that you will get an ImportError if you did not install scipy.
+   + If you chose to download ipython,
+     : ipython
+     : [1] import numpy
+     : [2] import matplotlib
+     : [3] import scipy
+     Note that you will get an ImportError if you did not install scipy.
+
+* The hard way
+Install numpy, matplotlib, (optional) ipython, and (optional) scipy individually. 
+** Linux
+Use your package manager. For exmaple, if you have ubuntu, debian, or another flavor of linux that uses apt,
+1. Install numpy and matplotlib
+  : sudo apt-get install python-numpy python-matplotlib
+2. (Optional) Install scipy and ipython
+  : sudo apt-get install python-scipy ipython
+
+Package managers will generally have slightly older versions which will be enough for our purposes today, but if you want the latest and greatest, you will have to either download and install them individually or use one of the other installation options.
+** Mac or Windows
+You will have to download and install each package. Do a web search for the documentation, and follow instructions there.
+1. numpy
+2. matplotlib
+3. (Optional) ipython
+4. (Optional) scipy
